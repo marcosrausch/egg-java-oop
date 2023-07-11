@@ -1,16 +1,19 @@
 package javaoop04;
 
 import domain.Rectangle;
+import services.Service;
 
 public class JavaOOP04 {
+    
+    static void run() {
+        Rectangle rectangle = Service.make();
+        Service.getArea(rectangle);
+        Service.getPerimeter(rectangle);
+        Service.draw(rectangle);
+    }
 
     public static void main(String[] args) {
-        Rectangle rectangle = new Rectangle();
-        
-        rectangle = rectangle.make();
-        System.out.println("La superficie del rectángulo es: " + rectangle.getArea());
-        System.out.println("El perímetro del rectángulo es: " + rectangle.getPerimeter());
-        rectangle.draw();
+        run();
     }
     
 }
