@@ -1,18 +1,18 @@
 package javaoop01;
 
 import domain.Book;
+import services.Service;
 
-public class JavaOOP01 {
+public class JavaOOP01 {    
+        
+    static void run() {    
+        Book book = Service.make();        
+        Service.get(book);
+    
+    }
 
     public static void main(String[] args) {
-        Book book = new Book();
-        book.add(
-                "El hombre duplicado", 
-                "José Saramago",
-                419
-        );
-        
-        book.get(book);
+        run();
     }
-    
+
 }
