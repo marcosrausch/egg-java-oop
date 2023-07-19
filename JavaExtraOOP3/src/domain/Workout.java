@@ -61,7 +61,10 @@ public class Workout {
     public void setDescription(String description) {
         this.description = description;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Workout{" + "ID=" + ID + ", name=" + name + ", runtime=" + runtime + ", difficulty=" + difficulty + ", description=" + description + '}';
+    }   
     
 }
