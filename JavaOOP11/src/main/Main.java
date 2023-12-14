@@ -1,32 +1,36 @@
 
 package main;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-        Date date = createDate();
-        System.out.println(date.toString());
-        
-        System.out.println(2023 - date.getYear());
-    }
-    
-    
-    static Date createDate() {
+    public static void main(String[] args) {        
+        int day, month, year;
         Scanner scanFor = new Scanner(System.in);
         
-        System.out.println("Ingrese el día en números");
-        int day = scanFor.nextInt();
-        System.out.println("Ingrese el mes en números");
-        int month = scanFor.nextInt();
-        System.out.println("Ingrese el año en dos dígitos 19[...]");
-        int year = scanFor.nextInt();
+        System.out.println("Ingrese el día de la fecha en dos dígitos: ");
+        day = scanFor.nextInt();
         
+        System.out.println("Ingrese el mes de la fecha en dos dígitos: ");
+        month = scanFor.nextInt();
         
-        Date date = new Date(year, month, day);
+        System.out.println("Ingrese el año de la fecha en cuatro dígitos: ");
+        year = scanFor.nextInt();
         
-        return date;
+        LocalDate date = LocalDate.of(year, month, day);
+        
+        System.out.println("La fecha que ingresó es: " + date);
+        
+        LocalDate now = LocalDate.now();
+        
+        int diff;
+        
+        diff = Math.abs(now.getYear()) - Math.abs(date.getYear());
+        
+        System.out.println("Hay " + Math.abs(diff) + " años de diferencia entre la fecha que ingresó y la fecha actual.");
     }
+    
+
 }
